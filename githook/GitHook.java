@@ -7,7 +7,7 @@ public class GitHook {
     // pre-commit sample
     private static final String PRE_COMMIT_SAMPLE_FILE = ".git/hooks/pre-commit.sample";
     private static final String PRE_COMMIT_EXEC_FILE = ".git/hooks/pre-commit";
-    private static final List<String> PRE_COMMIT_HOOKS = List.of("mvn clean");
+    private static final List<String> PRE_COMMIT_HOOKS = List.of("mvn test");
 
     private static final List<GitHookItem> REGISTER_HOOKS =
             List.of(new GitHookItem(PRE_COMMIT_SAMPLE_FILE, PRE_COMMIT_EXEC_FILE, PRE_COMMIT_HOOKS));
@@ -43,17 +43,17 @@ public class GitHook {
                                 e.printStackTrace();
                             }
                         });
-                        System.out.println("GitHook file renamed and content written successfully.");
+//                        System.out.println("GitHook file renamed and content written successfully.");
                     } catch (IOException e) {
-                        System.out.println("Failed to write content to the hook file.");
+//                        System.out.println("Failed to write content to the hook file.");
                     }
                 } else {
                     // field to rename hook file
-                    System.out.println("Failed to rename the hook file.");
+//                    System.out.println("Failed to rename the hook file.");
                 }
             } else {
                 // already changed, do nothing
-                System.out.println("Already done the hook file.");
+//                System.out.println("Already done the hook file.");
             }
         }
     }
